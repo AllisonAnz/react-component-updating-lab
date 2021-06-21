@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 
 import Timer from './Timer'
 import Controls from './Controls'
-
+//state value that is being set using the Control component and the method updateIntervalSetting
+//the updatInterval value is captured in an object for each Timer, allowing Timers to have different intervals
 //no need to modify anything in this component
 class App extends Component {
-
   state = {
     updateInterval: 1,
     timerIDs: []
   }
 
+  //Below, calls a method to add one initial timer
   componentDidMount() {
     this.handleAddTimer()
   }
@@ -21,6 +22,7 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>MultiTimer</h1>
+          {/* */}
           <Controls updateIntervalSetting={this.updateIntervalSetting} updateInterval={this.state.updateInterval} handleAddTimer={this.handleAddTimer}/>
         </header>
         <div className="TimerGrid">
